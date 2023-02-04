@@ -1,0 +1,73 @@
+Solution in c++
+
+
+class Solution {
+public:
+    void sortColors(vector<int>& nums) {
+        int n = nums.size();
+        int a=0,b=0,c=0;
+        vector<int>ans;
+        for (int i=0;i<n;i++){
+            if ( nums[i]==0){
+                a++;
+            }
+            else if(nums[i]==1){
+                b++;
+            }
+            else{
+                c++;
+            }
+        }
+        int count=0;
+        while(a>0){
+            nums[count]=0;
+            count++;
+            a--;
+        }
+        while(b>0){
+            nums[count]=1;
+            count++;
+            b--;
+
+        }
+        while(c>0){
+            nums[count]=2;
+            count++;
+            c--;
+        }
+    }
+};
+
+
+Solution in Python 
+
+class Solution:
+    def sortColors(self, nums: List[int]) -> None:
+        a=0
+        b=0
+        c=0
+        n = len(nums)
+        for i in range(n):
+            if (nums[i]==0):
+                a=a+1
+            elif (nums[i]==1):
+                b=b+1
+            else:
+                c=c+1
+
+        count=0
+        while(a>0):
+            nums[count]=0
+            count=count+1
+            a=a-1
+        while(b>0):
+            nums[count]=1
+            count=count+1
+            b=b-1
+        while(c>0):
+            nums[count]=2
+            count=count+1
+            c=c-1
+
+
+
